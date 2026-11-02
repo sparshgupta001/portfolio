@@ -71,6 +71,22 @@ header.site-nav{position:sticky;top:14px;z-index:90;display:flex;justify-content
 h1{font-size:clamp(2.4rem,5.5vw,3.8rem);letter-spacing:-.02em;margin-bottom:16px}
 .hero-lead{font-size:1.22rem;color:var(--muted);max-width:780px;line-height:1.6;margin-bottom:32px}
 
+/* TL;DR card */
+.tldr-card{background:var(--surface);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:20px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:38px}
+.tldr-badge{display:inline-block;font-size:.78rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.04em;font-family:'Fredoka',sans-serif;margin-bottom:12px;background:var(--accent-tint);padding:4px 12px;border-radius:99px}
+.tldr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
+.tldr-grid div{font-size:.92rem;color:var(--muted);line-height:1.55}
+.tldr-grid div strong{color:var(--ink);display:block;margin-bottom:3px;font-size:.95rem}
+
+/* schematic wireframe visual */
+.schematic-box{background:var(--surface);border-radius:18px;border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);padding:20px;margin:22px 0;overflow:hidden}
+.schematic-box svg{width:100%;height:auto;display:block}
+
+/* next case study footer card */
+.next-cs-card{background:var(--surface);border-radius:24px;padding:32px;box-shadow:var(--shadow);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-top:40px;text-align:left}
+.next-cs-card h3{font-size:1.4rem;margin:4px 0}
+.next-cs-card p{color:var(--muted);font-size:.95rem}
+
 /* meta grid */
 .meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;background:var(--surface);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:48px}
 .meta-item span{display:block;font-size:.78rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;font-family:'Fredoka',sans-serif}
@@ -187,6 +203,29 @@ footer{padding:48px 0;text-align:center;color:var(--muted);font-size:.92rem;bord
     </div>
   </div>
 
+  <!-- Reviewer Quick-Scan TL;DR -->
+  <div class="tldr-card">
+    <span class="tldr-badge">⚡ 30-Second Reviewer Summary</span>
+    <div class="tldr-grid">
+      <div>
+        <strong>The Problem</strong>
+        Security and privacy warnings either overwhelm everyday users with forensic jargon or throw catastrophic banners, causing severe alarm fatigue and blind dismissals.
+      </div>
+      <div>
+        <strong>The Solution</strong>
+        A calm, 3-tier risk model (Safe, Caution, Alert) with dual non-color accessibility cues (geometric glyphs + text tags) and a single primary mitigation button.
+      </div>
+      <div>
+        <strong>Technical &amp; Eng Realities</strong>
+        Built on Chrome Extension Manifest v3 using declarativeNetRequest and background service workers; strict sub-100ms popup render budget to prevent browser UI stutter.
+      </div>
+      <div>
+        <strong>My Role &amp; Deliverables</strong>
+        UX Designer &amp; Front-End Engineer: threat architecture, low/high-fi wireframes, progressive disclosure UI, interactive simulator, and complete threat report.
+      </div>
+    </div>
+  </div>
+
   <!-- In-Page Sticky TOC -->
   <nav class="toc-bar" aria-label="Case Study Navigation">
     <a href="#overview" class="toc-link">Overview</a>
@@ -195,6 +234,7 @@ footer{padding:48px 0;text-align:center;color:var(--muted);font-size:.92rem;bord
     <a href="#research" class="toc-link">Research Approach</a>
     <a href="#challenges" class="toc-link">Key Challenges</a>
     <a href="#journey" class="toc-link">User Journey</a>
+    <a href="#wireframes" class="toc-link">Wireframes &amp; Trade-offs</a>
     <a href="#simulator" class="toc-link">Interactive Simulator</a>
     <a href="#decisions" class="toc-link">Design Decisions</a>
     <a href="#outcome" class="toc-link">Outcome &amp; Next Steps</a>
@@ -325,6 +365,86 @@ footer{padding:48px 0;text-align:center;color:var(--muted);font-size:.92rem;bord
     </div>
   </section>
 
+  <!-- WIREFRAMES & TRADE-OFFS -->
+  <section id="wireframes" class="cs-section">
+    <span class="section-tag">Wireframes &amp; Architecture Trade-offs</span>
+    <h2>Evaluating Three Security Surface Models</h2>
+    <p class="body-copy">A primary UX challenge in browser security is determining when and how forcefully to intervene. I evaluated three architectural form factors to balance user autonomy against security vigilance:</p>
+    
+    <div class="schematic-box">
+      <svg viewBox="0 0 880 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wireframe explorations comparing Discarded Option A, Discarded Option B, and Selected Option C">
+        <!-- Option A: Discarded Modal Alert -->
+        <g transform="translate(10, 10)">
+          <rect width="260" height="300" rx="16" fill="var(--surface)" stroke="#ff605c" stroke-width="2"/>
+          <text x="20" y="32" fill="#ff605c" font-family="'Fredoka',sans-serif" font-weight="600" font-size="12">OPTION A (DISCARDED)</text>
+          <text x="20" y="52" fill="var(--ink)" font-family="'Fredoka',sans-serif" font-weight="600" font-size="15">Blocking Modal Warning</text>
+          <!-- Mock Browser with Full Overlay -->
+          <rect x="20" y="68" width="220" height="152" rx="8" fill="var(--bg)" stroke="var(--ink)" stroke-opacity=".1"/>
+          <rect x="20" y="68" width="220" height="18" fill="var(--ink)" opacity=".08"/>
+          <!-- Big Intrusive Warning Box -->
+          <rect x="35" y="96" width="190" height="110" rx="6" fill="#ff605c" fill-opacity=".15" stroke="#ff605c" stroke-dasharray="3 3"/>
+          <path d="M130 112 L145 138 H115 Z" fill="#ff605c"/>
+          <rect x="60" y="148" width="140" height="10" rx="3" fill="#ff605c" opacity=".8"/>
+          <rect x="75" y="166" width="110" height="8" rx="3" fill="var(--ink)" opacity=".2"/>
+          <rect x="50" y="184" width="70" height="14" rx="4" fill="#ff605c"/>
+          <rect x="140" y="184" width="70" height="14" rx="4" fill="var(--ink)" opacity=".2"/>
+          <!-- Tradeoff verdict -->
+          <rect x="20" y="230" width="220" height="58" rx="6" fill="var(--bg)"/>
+          <text x="30" y="250" fill="var(--ink)" font-family="'Inter',sans-serif" font-weight="600" font-size="11">Verdict: Punitive &amp; Discarded</text>
+          <text x="30" y="268" fill="var(--muted)" font-family="'Inter',sans-serif" font-size="10">Locks tab workflow. Causes severe</text>
+          <text x="30" y="280" fill="var(--muted)" font-family="'Inter',sans-serif" font-size="10">alarm fatigue; 82% blind dismissals.</text>
+        </g>
+
+        <!-- Option B: Discarded DevTools Drawer -->
+        <g transform="translate(310, 10)">
+          <rect width="260" height="300" rx="16" fill="var(--surface)" stroke="#ffbd44" stroke-width="2"/>
+          <text x="20" y="32" fill="#d48800" font-family="'Fredoka',sans-serif" font-weight="600" font-size="12">OPTION B (DISCARDED)</text>
+          <text x="20" y="52" fill="var(--ink)" font-family="'Fredoka',sans-serif" font-weight="600" font-size="15">Forensic DevTools Drawer</text>
+          <!-- Mock Browser with Side Drawer -->
+          <rect x="20" y="68" width="220" height="152" rx="8" fill="var(--bg)" stroke="var(--ink)" stroke-opacity=".1"/>
+          <rect x="20" y="68" width="220" height="18" fill="var(--ink)" opacity=".08"/>
+          <!-- Side Drawer Table -->
+          <rect x="140" y="86" width="100" height="134" fill="var(--surface)" stroke="var(--ink)" stroke-opacity=".15"/>
+          <rect x="146" y="94" width="88" height="6" fill="var(--ink)" opacity=".3"/>
+          <rect x="146" y="106" width="88" height="6" fill="var(--ink)" opacity=".15"/>
+          <rect x="146" y="118" width="88" height="6" fill="var(--ink)" opacity=".15"/>
+          <rect x="146" y="130" width="88" height="6" fill="var(--ink)" opacity=".15"/>
+          <rect x="146" y="142" width="88" height="6" fill="var(--ink)" opacity=".15"/>
+          <rect x="146" y="154" width="88" height="6" fill="var(--ink)" opacity=".15"/>
+          <!-- Tradeoff verdict -->
+          <rect x="20" y="230" width="220" height="58" rx="6" fill="var(--bg)"/>
+          <text x="30" y="250" fill="var(--ink)" font-family="'Inter',sans-serif" font-weight="600" font-size="11">Verdict: Jargon Heavy</text>
+          <text x="30" y="268" fill="var(--muted)" font-family="'Inter',sans-serif" font-size="10">Exposes raw HTTP headers and stacks.</text>
+          <text x="30" y="280" fill="var(--muted)" font-family="'Inter',sans-serif" font-size="10">Intimidates everyday non-tech users.</text>
+        </g>
+
+        <!-- Option C: Selected Ambient Status + Popover -->
+        <g transform="translate(610, 10)">
+          <rect width="260" height="300" rx="16" fill="var(--surface)" stroke="#00ca4e" stroke-width="2"/>
+          <text x="20" y="32" fill="#00ca4e" font-family="'Fredoka',sans-serif" font-weight="600" font-size="12">OPTION C (SELECTED)</text>
+          <text x="20" y="52" fill="var(--ink)" font-family="'Fredoka',sans-serif" font-weight="600" font-size="15">Ambient Shield Popover</text>
+          <!-- Mock Browser with Toolbar Icon and Floating Card -->
+          <rect x="20" y="68" width="220" height="152" rx="8" fill="var(--bg)" stroke="var(--ink)" stroke-opacity=".1"/>
+          <rect x="20" y="68" width="220" height="18" fill="var(--ink)" opacity=".08"/>
+          <!-- Tiny Shield in Toolbar -->
+          <circle cx="218" cy="77" r="5" fill="#00ca4e"/>
+          <!-- Anchored Popover -->
+          <rect x="120" y="88" width="112" height="126" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.1))"/>
+          <rect x="128" y="98" width="50" height="6" rx="3" fill="#00ca4e"/>
+          <rect x="128" y="110" width="96" height="24" rx="4" fill="var(--accent-tint)"/>
+          <rect x="128" y="142" width="96" height="12" rx="3" fill="var(--bg)"/>
+          <rect x="128" y="160" width="96" height="12" rx="3" fill="var(--bg)"/>
+          <rect x="128" y="182" width="96" height="16" rx="8" fill="var(--accent)"/>
+          <!-- Tradeoff verdict -->
+          <rect x="20" y="230" width="220" height="58" rx="6" fill="var(--bg)"/>
+          <text x="30" y="250" fill="var(--ink)" font-family="'Inter',sans-serif" font-weight="600" font-size="11">Verdict: Calm &amp; Actionable</text>
+          <text x="30" y="268" fill="var(--muted)" font-family="'Inter',sans-serif" font-size="10">Peripheral reassurance; 1-click glance</text>
+          <text x="30" y="280" fill="var(--muted)" font-family="'Inter',sans-serif" font-size="10">with single unambiguous mitigation.</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
   <!-- 07 INTERACTIVE EXTENSION SIMULATOR -->
   <section id="simulator" class="cs-section">
     <span class="section-tag">07 · Interactive Prototype</span>
@@ -383,6 +503,16 @@ footer{padding:48px 0;text-align:center;color:var(--muted);font-size:.92rem;bord
             <div style="margin-top:16px">
               <button class="ext-cta-btn" id="extBtn">Shield Browsing Session</button>
             </div>
+
+            <!-- Edge Case Bypass Toggle -->
+            <div style="margin-top:10px;text-align:center">
+              <button type="button" id="extBypassBtn" style="background:none;border:0;color:var(--muted);font-size:.78rem;cursor:pointer;text-decoration:underline" onclick="toggleBypassState()">
+                Site broken? Pause protection for 24 hours
+              </button>
+            </div>
+            <div id="extBypassAlert" style="display:none;margin-top:12px;padding:10px;border-radius:10px;background:rgba(240,196,67,.18);border:1px solid #f0c443;font-size:.8rem;color:var(--ink);line-height:1.4">
+              ⚠️ <strong>24h Exception Active:</strong> Protection paused on this domain so payment or login forms continue working without script conflicts.
+            </div>
           </div>
         </div>
       </div>
@@ -427,6 +557,16 @@ footer{padding:48px 0;text-align:center;color:var(--muted);font-size:.92rem;bord
 
     <div class="footer-cta">
       <a href="../../index.html#work" class="btn primary">← Back to All Case Studies</a>
+    </div>
+
+    <!-- Next Case Study Card -->
+    <div class="next-cs-card">
+      <div>
+        <span class="section-tag" style="margin-bottom:2px">Next Case Study</span>
+        <h3>CIOrchestration 🚦</h3>
+        <p>3-Agent AI System for Automated CI/CD Failure Diagnosis (2nd at HackOasis V3)</p>
+      </div>
+      <a href="../ci-orchestration/index.html" class="btn primary">Read Case Study →</a>
     </div>
   </section>
 </main>
@@ -477,7 +617,22 @@ window.addEventListener('scroll', () => {
 }, {passive:true});
 
 // Interactive Simulator Logic
+let isBypassed = false;
+function toggleBypassState() {
+  isBypassed = !isBypassed;
+  const alertBox = document.getElementById('extBypassAlert');
+  const btn = document.getElementById('extBypassBtn');
+  if (alertBox) alertBox.style.display = isBypassed ? 'block' : 'none';
+  if (btn) btn.textContent = isBypassed ? '✓ Protection paused (Resume now)' : 'Site broken? Pause protection for 24 hours';
+}
+
 function setSimState(state) {
+  isBypassed = false;
+  const alertBox = document.getElementById('extBypassAlert');
+  const bypassBtn = document.getElementById('extBypassBtn');
+  if (alertBox) alertBox.style.display = 'none';
+  if (bypassBtn) bypassBtn.textContent = 'Site broken? Pause protection for 24 hours';
+
   document.querySelectorAll('.sim-tab-btn').forEach((btn, idx) => {
     btn.classList.toggle('active', (state === 'safe' && idx === 0) || (state === 'caution' && idx === 1) || (state === 'alert' && idx === 2));
   });
