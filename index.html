@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sparsh Gupta | UX &amp; Product Design Portfolio · Designer &amp; Builder</title>
-<meta name="description" content="Sparsh Gupta — Computer Science &amp; Design student building thoughtful, human-centered digital products. UX Design Intern candidate for Google &amp; YouTube.">
+<title>Sparsh Gupta — Product Designer &amp; Builder</title>
+<meta name="description" content="Sparsh Gupta — Computer Science &amp; Design student crafting thoughtful, human-centered digital products at the intersection of design craft and engineering depth.">
 <meta name="author" content="Sparsh Gupta">
 
 <!-- Theme Color for Mobile Browsers -->
@@ -13,7 +13,7 @@
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Sparsh Gupta | UX &amp; Product Design Portfolio · Designer &amp; Builder">
+<meta property="og:title" content="Sparsh Gupta — Product Designer &amp; Builder">
 <meta property="og:description" content="Computer Science &amp; Design undergraduate creating intuitive digital experiences through the intersection of design, technology, and human-centered problem-solving.">
 <meta property="og:url" content="https://sparshgupta001.github.io/portfolio/">
 <meta property="og:site_name" content="Sparsh Gupta Portfolio">
@@ -22,7 +22,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sparsh Gupta | UX &amp; Product Design Portfolio · Designer &amp; Builder">
+<meta name="twitter:title" content="Sparsh Gupta — Product Designer &amp; Builder">
 <meta name="twitter:description" content="Computer Science &amp; Design undergraduate creating intuitive digital experiences through the intersection of design, technology, and human-centered problem-solving.">
 <meta name="twitter:image" content="https://sparshgupta001.github.io/portfolio/og-preview.png">
 <meta name="twitter:image:alt" content="Sparsh Gupta UX &amp; Product Design Portfolio Preview">
@@ -36,27 +36,30 @@
 <style>
 /* ============ DESIGN TOKENS ============ */
 :root{
-  --bg:#fff8f3; --surface:#ffffff; --ink:#241d3b; --muted:#5c5475;
-  --pink:#ff8fb1; --peach:#ffb78a; --mint:#38a883; --sky:#4a9fff; --lilac:#8b6cf7; --sun:#f0c443;
-  --accent:#6c42f5; --accent-focus:#7b5cff;
-  --shadow:0 12px 34px rgba(108,66,245,.09); --shadow-hover:0 20px 45px rgba(108,66,245,.16); --radius:24px;
+  --bg:#fafaf8; --surface:#ffffff; --ink:#1a1523; --muted:#6b6584;
+  --pink:#f472b6; --peach:#fb923c; --mint:#34d399; --sky:#60a5fa; --lilac:#a78bfa; --sun:#fbbf24;
+  --accent:#7c3aed; --accent-focus:#8b5cf6; --accent2:#06b6d4;
+  --shadow:0 4px 20px rgba(124,58,237,.06),0 1px 4px rgba(0,0,0,.04); --shadow-hover:0 16px 48px rgba(124,58,237,.14),0 4px 12px rgba(0,0,0,.06); --radius:20px;
+  --border:1px solid rgba(0,0,0,.07);
 }
 [data-theme="dark"]{
-  --bg:#141026; --surface:#1e1738; --ink:#f5efff; --muted:#aba2c8;
-  --accent:#9d82ff; --accent-focus:#c4b5fd;
-  --shadow:0 12px 34px rgba(0,0,0,.45); --shadow-hover:0 20px 48px rgba(0,0,0,.6);
+  --bg:#0d0b14; --surface:#171524; --ink:#f1eeff; --muted:#9b92ba;
+  --accent:#a78bfa; --accent-focus:#c4b5fd;
+  --shadow:0 4px 20px rgba(0,0,0,.3),0 1px 4px rgba(0,0,0,.2); --shadow-hover:0 16px 48px rgba(0,0,0,.5);
+  --border:1px solid rgba(255,255,255,.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.68;overflow-x:hidden;transition:background .35s,color .35s}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.68;overflow-x:hidden;transition:background .4s cubic-bezier(.4,0,.2,1),color .4s cubic-bezier(.4,0,.2,1);-webkit-font-smoothing:antialiased}
 h1,h2,h3,.logo{font-family:'Fredoka',sans-serif;line-height:1.2}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 @media(max-width:420px){.wrap{padding:0 16px}}
 section{padding:96px 0;position:relative}
 @media(max-width:760px){section{padding:68px 0}}
-.eyebrow{display:inline-block;background:var(--surface);box-shadow:var(--shadow);padding:6px 16px;border-radius:99px;font-weight:600;font-size:.85rem;color:var(--accent);margin-bottom:14px;letter-spacing:.02em;text-transform:uppercase}
-h2{font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:12px;letter-spacing:-.015em}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.75rem;color:var(--accent);margin-bottom:18px;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px;display:inline-block}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:16px;letter-spacing:-.03em;font-weight:600}
 .lead{color:var(--muted);max-width:680px;margin-bottom:44px;font-size:1.06rem;line-height:1.65}
 
 /* ============ ACCESSIBILITY & FOCUS ============ */
@@ -71,7 +74,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:12px;letter-spacing:-.015em}
 .mail:focus-visible{border-radius:12px;outline-offset:6px}
 
 /* progress + custom cursor */
-#progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--pink),var(--sun),var(--mint),var(--sky),var(--lilac));z-index:100;border-radius:0 6px 6px 0}
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--lilac),var(--pink));z-index:100;border-radius:0 2px 2px 0}
 #cursor{position:fixed;width:24px;height:24px;border-radius:50%;background:var(--pink);opacity:0;pointer-events:none;z-index:99;transform:translate(-50%,-50%);transition:opacity .2s,width .2s,height .2s,background .2s;mix-blend-mode:multiply}
 #cursor.big{width:52px;height:52px;background:var(--mint)}
 @media (hover:none), (pointer:coarse){#cursor{display:none!important}}
@@ -82,7 +85,7 @@ nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:90;backg
 .logo span{color:var(--pink)}
 nav ul{display:flex;gap:4px;list-style:none}
 nav ul a{padding:8px 16px;border-radius:99px;font-size:.9rem;font-weight:500;transition:background .25s,color .25s}
-nav ul a:hover,nav ul a.active{background:var(--lilac);color:#fff}
+nav ul a:hover,nav ul a.active{background:var(--accent);color:#fff}
 .nav-actions{display:flex;align-items:center;gap:8px}
 #theme{border:0;background:var(--sun);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.15rem;display:inline-grid;place-items:center;transition:transform .4s}
 #theme:hover{transform:rotate(30deg) scale(1.08)}
@@ -106,8 +109,8 @@ nav ul a:hover,nav ul a.active{background:var(--lilac);color:#fff}
 .hello{font-size:1.1rem;color:var(--muted);margin-bottom:6px;font-weight:500}
 .hello .wave{display:inline-block;animation:wave 2s infinite;transform-origin:70% 70%}
 @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
-h1{font-size:clamp(2.3rem,6.2vw,4.3rem);margin-bottom:12px;letter-spacing:-.02em}
-h1 .grad{background:linear-gradient(90deg,var(--pink),var(--accent),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200%;animation:shift 6s linear infinite}
+h1{font-size:clamp(2.6rem,6.5vw,5rem);margin-bottom:14px;letter-spacing:-.04em;line-height:1.05}
+h1 .grad{background:linear-gradient(135deg,var(--accent) 0%,var(--lilac) 50%,var(--pink) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200%;animation:shift 8s ease-in-out infinite alternate}
 @keyframes shift{to{background-position:200% 0}}
 .typed{font-family:'Fredoka';font-size:clamp(1.15rem,2.8vw,1.65rem);min-height:2.2em;color:var(--accent)}
 .typed::after{content:'|';animation:blink 1s steps(1) infinite}
@@ -115,11 +118,13 @@ h1 .grad{background:linear-gradient(90deg,var(--pink),var(--accent),var(--sky));
 .hero p.about-line{color:var(--muted);max-width:560px;margin:14px 0 28px;font-size:1.08rem;line-height:1.68}
 @media(max-width:880px){.hero p.about-line{margin-inline:auto}}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;min-height:48px;border-radius:99px;font-weight:600;border:0;cursor:pointer;font-size:1rem;transition:transform .25s,box-shadow .25s;text-decoration:none}
-.btn.primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(108,66,245,.35)}
-.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
-.btn.outline{background:transparent;border:2px solid color-mix(in srgb,var(--accent) 30%,transparent);color:var(--ink)}
-.btn:hover{transform:translateY(-3px) rotate(-.6deg);box-shadow:var(--shadow-hover)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;min-height:48px;border-radius:99px;font-weight:600;border:0;cursor:pointer;font-size:.95rem;letter-spacing:.01em;transition:all .3s cubic-bezier(.4,0,.2,1);text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(124,58,237,.3)}
+.btn.primary:hover{background:var(--accent-focus);box-shadow:0 8px 28px rgba(124,58,237,.4);transform:translateY(-2px)}
+.btn.ghost{background:var(--surface);color:var(--ink);box-shadow:var(--shadow);border:var(--border)}
+.btn.ghost:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.btn.outline{background:transparent;border:1.5px solid color-mix(in srgb,var(--accent) 35%,transparent);color:var(--ink)}
+.btn.outline:hover{border-color:var(--accent);transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
 
 /* mascot */
@@ -134,21 +139,21 @@ h1 .grad{background:linear-gradient(90deg,var(--pink),var(--accent),var(--sky));
 .bubble.show{opacity:1;transform:scale(1)}
 
 /* floating blobs */
-.blob{position:absolute;border-radius:50%;filter:blur(55px);opacity:.38;z-index:-1;animation:drift 14s ease-in-out infinite alternate}
+.blob{position:absolute;border-radius:50%;filter:blur(72px);opacity:.22;z-index:-1;animation:drift 18s ease-in-out infinite alternate}
 .b1{width:340px;height:340px;background:var(--pink);top:6%;left:-6%}
 .b2{width:300px;height:300px;background:var(--sky);bottom:4%;right:-5%;animation-delay:-5s}
 .b3{width:220px;height:220px;background:var(--sun);top:48%;left:46%;animation-delay:-9s}
 @keyframes drift{to{transform:translate(45px,-35px) scale(1.12)}}
 
 /* scroll reveals */
-.reveal{opacity:0;transform:translateY(32px) scale(.98);transition:opacity .75s cubic-bezier(.2,.8,.2,1),transform .75s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
 /* about */
 .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
-.card{background:var(--surface);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;transform-style:preserve-3d}
-.card:hover{box-shadow:var(--shadow-hover)}
+.card{background:var(--surface);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow);border:var(--border);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s;transform-style:preserve-3d}
+.card:hover{box-shadow:var(--shadow-hover);border-color:color-mix(in srgb,var(--accent) 25%,transparent)}
 .card .ico{font-size:2rem;display:inline-grid;place-items:center;width:56px;height:56px;border-radius:18px;margin-bottom:14px}
 .card h3{font-size:1.25rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.95rem;line-height:1.55}
@@ -162,7 +167,7 @@ h1 .grad{background:linear-gradient(90deg,var(--pink),var(--accent),var(--sky));
 .track{display:flex;gap:14px;width:max-content;animation:scroll 32s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
-.chip{padding:10px 20px;border-radius:99px;background:var(--surface);box-shadow:var(--shadow);font-weight:600;white-space:nowrap;font-size:.95rem}
+.chip{padding:9px 18px;border-radius:99px;background:var(--surface);box-shadow:var(--shadow);border:var(--border);font-weight:600;white-space:nowrap;font-size:.9rem}
 .chip:nth-child(5n+1){border-bottom:4px solid var(--pink)}.chip:nth-child(5n+2){border-bottom:4px solid var(--mint)}
 .chip:nth-child(5n+3){border-bottom:4px solid var(--sky)}.chip:nth-child(5n+4){border-bottom:4px solid var(--sun)}
 .chip:nth-child(5n){border-bottom:4px solid var(--lilac)}
@@ -180,8 +185,8 @@ h1 .grad{background:linear-gradient(90deg,var(--pink),var(--accent),var(--sky));
 
 /* ============ FEATURED SHOWCASE CARDS ============ */
 .showcase-list{display:flex;flex-direction:column;gap:48px}
-.featured-case{background:var(--surface);border-radius:32px;box-shadow:var(--shadow);padding:clamp(24px,4.5vw,48px);position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--c,var(--pink)) 20%,transparent);transition:transform .3s,box-shadow .3s}
-.featured-case:hover{box-shadow:var(--shadow-hover)}
+.featured-case{background:var(--surface);border-radius:28px;box-shadow:var(--shadow);padding:clamp(28px,4.5vw,52px);position:relative;overflow:hidden;border:1px solid color-mix(in srgb,var(--c,var(--pink)) 15%,transparent);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s}
+.featured-case:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
 .featured-case::before{content:'';position:absolute;inset:0 0 auto 0;height:8px;background:var(--c,var(--pink))}
 .showcase-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
 @media(max-width:920px){.showcase-grid{grid-template-columns:1fr}}
@@ -225,7 +230,7 @@ h1 .grad{background:linear-gradient(90deg,var(--pink),var(--accent),var(--sky));
 /* contact */
 #contact{text-align:center}
 .mail{font-family:'Fredoka';font-size:clamp(1.25rem,4vw,2.35rem);display:inline-block;margin:10px 0 28px;background:linear-gradient(90deg,var(--pink),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;overflow-wrap:anywhere;word-break:break-word}
-footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;border-top:1px solid color-mix(in srgb,var(--ink) 6%,transparent)}
+footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.88rem;border-top:1px solid color-mix(in srgb,var(--ink) 5%,transparent);letter-spacing:.01em}
 
 /* confetti */
 .confetti{position:fixed;width:10px;height:14px;z-index:98;pointer-events:none;border-radius:3px;animation:fall 1.4s ease-out forwards}
@@ -238,11 +243,92 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
   html{scroll-behavior:auto}
   .track{transform:none}
 }
+
+/* ============ PREMIUM AESTHETIC ADDITIONS ============ */
+
+/* Grain texture overlay */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.5}
+[data-theme="dark"] body::before{opacity:.8}
+
+/* Gradient mesh background */
+#hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 40%,color-mix(in srgb,var(--accent) 7%,transparent),transparent 70%),radial-gradient(ellipse 50% 60% at 20% 70%,color-mix(in srgb,var(--pink) 8%,transparent),transparent 70%);z-index:-1;pointer-events:none}
+
+/* Section dividers â€” elegant hairlines */
+section + section::before{content:'';display:block;width:100%;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ink) 8%,transparent) 30%,color-mix(in srgb,var(--ink) 8%,transparent) 70%,transparent);margin-bottom:-1px}
+
+/* Stat cards â€” elevated number treatment */
+.stat b{font-size:2.6rem;letter-spacing:-.04em;line-height:1}
+.stat{border:var(--border);transition:transform .3s,box-shadow .3s}
+.stat:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+
+/* About cards â€” add left accent ----*/
+.card.tilt{border-left:none}
+
+/* Process cards â€” more editorial  */
+.process-card{border-top-width:3px}
+
+/* case visual â€” add hover shimmer */
+.case-visual{transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s}
+.featured-case:hover .case-visual{transform:scale(1.01)}
+
+/* Timeline â€” refined dots */
+.t-item::before{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 12%,transparent)}
+
+/* Contact â€” email link animation */
+.mail{transition:opacity .25s}
+.mail:hover{opacity:.75}
+
+/* Nav scroll-shadow */
+nav{transition:box-shadow .3s,background .3s}
+
+/* Chips â€” hover state */
+.chip{transition:transform .2s,box-shadow .2s,background .2s}
+.chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+
+/* Case meta box â€” hover accent border */
+.meta-box{transition:border .25s,transform .25s;border:1px solid transparent}
+.meta-box:hover{border-color:color-mix(in srgb,var(--c,var(--accent)) 25%,transparent);transform:translateY(-1px)}
+
+/* Timeline gradient line */
+.timeline::before{background:linear-gradient(180deg,var(--accent),var(--lilac),var(--pink))}
+
+/* Number stat counter animated underline */
+.stat{position:relative;overflow:hidden}
+.stat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--lilac));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1);border-radius:0 0 20px 20px}
+.stat:hover::after{transform:scaleX(1)}
+
+/* Hero about-line â€” refined */
+.hello{font-size:1rem;letter-spacing:.01em}
+
+/* Mascot float â€” more graceful */
+.mascot{filter:drop-shadow(0 24px 32px rgba(124,58,237,.18))}
+
+/* window-dots â€” correct macOS sizing */
+.dot{width:11px;height:11px}
+
+/* Featured case top stripe â€” thinner */
+.featured-case::before{height:3px;background:linear-gradient(90deg,var(--c,var(--pink)),color-mix(in srgb,var(--c,var(--pink)) 40%,transparent))}
+
+/* Mini scrollbar styling */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--accent) 30%,transparent);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+/* Selection highlight */
+::selection{background:color-mix(in srgb,var(--accent) 25%,transparent);color:var(--ink)}
+
+/* Hero typed cursor */
+.typed::after{content:'|';opacity:.7;font-weight:300;color:var(--muted)}
+
+/* Process card inner link style */
+.process-card a{color:var(--pc,var(--accent));text-decoration-color:color-mix(in srgb,var(--pc,var(--accent)) 40%,transparent);text-decoration:underline;text-underline-offset:3px;transition:text-decoration-color .2s}
+.process-card a:hover{text-decoration-color:var(--pc,var(--accent))}
 </style>
 </head>
 <body>
 <!-- Skip Link for Keyboard Accessibility -->
-<a href="#work" class="skip-link">Skip to featured case studies</a>
+<a href="#work" class="skip-link">Skip to case studies</a>
 
 <div id="progress"></div>
 <div id="cursor"></div>
@@ -254,9 +340,9 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
     <li><a href="#about">About</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#more">Side Quests</a></li>
+    <li><a href="#more">More</a></li>
     <li><a href="#journey">Journey</a></li>
-    <li><a href="#contact">Hi!</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-actions">
     <button id="theme" aria-label="Switch to dark mode" title="Toggle color theme">🌙</button>
@@ -274,21 +360,21 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
   <div class="wrap hero-grid">
     <div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center">
-        <span style="display:inline-block;padding:5px 14px;border-radius:99px;font-size:.82rem;font-weight:700;background:rgba(230,33,23,.12);color:#e62117;border:1px solid rgba(230,33,23,.25)">🎯 YouTube UX Design Intern Candidate · Summer 2027</span>
-        <span style="display:inline-block;padding:5px 14px;border-radius:99px;font-size:.82rem;font-weight:600;background:rgba(56,168,131,.12);color:#38a883">Computer Science + Design @ DSCE</span>
+        <span style="display:inline-block;padding:5px 14px;border-radius:99px;font-size:.82rem;font-weight:600;background:rgba(56,168,131,.12);color:#38a883;border:1px solid rgba(56,168,131,.25)">Computer Science + Design @ DSCE</span>
+        <span style="display:inline-block;padding:5px 14px;border-radius:99px;font-size:.82rem;font-weight:600;background:rgba(108,66,245,.10);color:var(--accent);border:1px solid rgba(108,66,245,.2)">Open to Design Opportunities</span>
       </div>
-      <p class="hello"><span class="wave">👋</span> Hi there, I'm</p>
+      <p class="hello">Hello, I'm</p>
       <h1><span class="grad">Sparsh Gupta</span></h1>
       <div class="typed" id="typed" aria-live="polite"></div>
-      <p class="about-line">Computer Science &amp; Design undergraduate at DSCE Bengaluru. I build intuitive digital experiences through the intersection of design craft, technical depth, and human-centered problem solving.</p>
+      <p class="about-line">CS &amp; Design undergraduate at DSCE Bengaluru. I design digital products where craft and engineering meet — turning complex problems into clear, intuitive experiences people actually want to use.</p>
       <div class="hero-cta">
-        <a href="#work" class="btn primary">Explore Featured Work ✨</a>
-        <a href="#process" class="btn outline">My Design Process 🛠️</a>
-        <a href="#contact" class="btn ghost">Say hello 💌</a>
+        <a href="#work" class="btn primary">View Case Studies</a>
+        <a href="#process" class="btn outline">My Process</a>
+        <a href="#contact" class="btn ghost">Get in Touch</a>
       </div>
     </div>
     <div class="mascot-box">
-      <div class="bubble" id="bubble">Hi! Click me 💜</div>
+      <div class="bubble" id="bubble">Tap me</div>
       <svg class="mascot" id="mascot" viewBox="0 0 300 300" role="img" aria-label="Friendly purple blob mascot with eyes that follow cursor">
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb4cf"/><stop offset="1" stop-color="#b9a2ff"/></linearGradient>
@@ -311,7 +397,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 <section id="about">
   <div class="wrap">
     <span class="eyebrow reveal">about me</span>
-    <h2 class="reveal">Designer's eye, builder's hands 🛠️</h2>
+    <h2 class="reveal">Designer's eye, builder's hands.</h2>
     <p class="lead reveal">My degree sits right at the intersection of computer science and design. I explore ambiguous product questions, structure intuitive interactions, and write code to test ideas with real data early.</p>
     <div class="about-grid">
       <div class="card tilt reveal"><div class="ico" style="background:var(--pink)">🔍</div><h3>Understand People</h3><p>Identify unmet needs and mental models through contextual inquiry, user journeys, and respectful qualitative observation.</p></div>
@@ -341,7 +427,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 <section id="process">
   <div class="wrap">
     <span class="eyebrow reveal">framework</span>
-    <h2 class="reveal">How I Approach Product Design 📐</h2>
+    <h2 class="reveal">How I Design</h2>
     <p class="lead reveal">A grounded, human-centered framework I practice and demonstrate across each project below — transforming ambiguous problems into clear, production-ready experiences.</p>
     
     <div class="process-grid">
@@ -351,7 +437,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
         <h3>Understand</h3>
         <p>Start with the person and their daily context. Listen to how they navigate current workarounds and identify what causes friction, fatigue, or distrust before sketching pixels.</p>
         <div style="margin:10px 0 6px;font-size:.82rem;font-weight:600;color:var(--pc)">
-          → Applied in <a href="./projects/youtube-discovery/#research" style="text-decoration:underline">YouTube Intent Inquiries</a>
+          → Applied in <a href="./projects/doppelganger/#research" style="text-decoration:underline">Doppelgänger Research</a>
         </div>
         <div class="process-tag-list">
           <span class="p-tag">User Inquiries</span>
@@ -396,7 +482,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
         <h3>Prototype</h3>
         <p>Bring ideas into reality with living high-fidelity UI and code prototypes. Test realistic edge cases, responsive adaptations, and micro-interactions so the solution can be felt.</p>
         <div style="margin:10px 0 6px;font-size:.82rem;font-weight:600;color:var(--pc)">
-          → Applied in <a href="./projects/youtube-discovery/#simulator" style="text-decoration:underline">Living Intent Feed Simulator</a>
+          → Applied in <a href="./projects/provenance/#ia" style="text-decoration:underline">Provenance 3-Tier Prototype</a>
         </div>
         <div class="process-tag-list">
           <span class="p-tag">Interactive Prototyping</span>
@@ -438,11 +524,11 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
   </div>
 </section>
 
-<!-- FEATURED CASE STUDIES -->
+<h2 class="reveal">Selected Work</h2>
 <section id="work">
   <div class="wrap">
     <span class="eyebrow reveal">featured work</span>
-    <h2 class="reveal">Featured Case Studies 💡</h2>
+<h2 class="reveal">Selected Work</h2>
     <p class="lead reveal">Four in-depth product design stories blending interaction design, information architecture, and technical feasibility.</p>
 
     <div class="showcase-list">
@@ -453,7 +539,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
           <div>
             <div class="case-badge-row">
               <span class="case-pill">Flagship Concept</span>
-              <span class="case-pill">YouTube UX Internship</span>
+              
               <span class="case-pill">Interaction Design</span>
             </div>
             <h3>Rethinking YouTube Video Discovery 📺</h3>
@@ -551,7 +637,6 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 
             <div class="case-actions">
               <a class="btn primary" href="./projects/doppelganger/">Explore Case Study &amp; Simulator ↗</a>
-              <a class="btn ghost" href="#" data-todo="Doppelgänger Figma">Figma Prototype ↗</a>
             </div>
           </div>
 
@@ -618,7 +703,6 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 
             <div class="case-actions">
               <a class="btn primary" href="./projects/ci-orchestration/">Explore Case Study &amp; Workflow ↗</a>
-              <a class="btn ghost" href="#" data-todo="CIOrchestration GitHub">GitHub Repo ↗</a>
             </div>
           </div>
 
@@ -693,7 +777,6 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 
             <div class="case-actions">
               <a class="btn primary" href="./projects/provenance/">Explore Case Study &amp; Inspector ↗</a>
-              <a class="btn ghost" href="#" data-todo="Provenance GitHub">GitHub Repo ↗</a>
             </div>
           </div>
 
@@ -749,7 +832,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 <section id="more">
   <div class="wrap">
     <span class="eyebrow reveal">more technical work</span>
-    <h2 class="reveal">Side Quests &amp; Explorations 🎮</h2>
+<h2 class="reveal">More Work</h2>
     <p class="lead reveal">Focused technical projects exploring AI defense, security analysis, and design systems experimentation.</p>
     
     <div class="grid2">
@@ -778,7 +861,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 <section id="journey">
   <div class="wrap">
     <span class="eyebrow reveal">journey</span>
-    <h2 class="reveal">Where I've been 🌱</h2>
+<h2 class="reveal">Experience</h2>
     <div class="timeline">
       <div class="card t-item reveal">
         <small>Jul 2026 – Sep 2026</small>
@@ -797,7 +880,7 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
       </div>
     </div>
 
-    <h2 class="reveal" style="margin-top:60px">Little wins 🏅</h2>
+<h2 class="reveal" style="margin-top:60px">Recognition</h2>
     <div class="about-grid">
       <div class="card trophy reveal">
         <div class="ico" style="background:var(--sun);width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.8rem">🥈</div>
@@ -828,13 +911,12 @@ footer{text-align:center;padding:34px 20px;color:var(--muted);font-size:.92rem;b
 <section id="contact">
   <div class="wrap">
     <span class="eyebrow reveal">contact</span>
-    <h2 class="reveal">Let's make something lovely 💜</h2>
-    <p class="lead reveal" style="margin-inline:auto">Open to Product Design, UX Design, and Design Technology internships. I'd love to connect and chat about products.</p>
+<h2 class="reveal">Let's build something.</h2>
+    <p class="lead reveal" style="margin-inline:auto">Open to product design roles and design technology internships. I care deeply about craft, clarity, and building things that work for people.</p>
     <a class="mail reveal" href="mailto:sparshgupta.2005.2005@gmail.com">sparshgupta.2005.2005@gmail.com</a>
     <div class="hero-cta reveal" style="justify-content:center">
       <a class="btn primary" href="https://www.linkedin.com/in/sparshgupta2705/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a class="btn ghost" href="https://github.com/sparshgupta001" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="btn ghost" href="#" data-todo="Resume PDF">Resume</a>
     </div>
   </div>
 </section>
@@ -985,7 +1067,7 @@ if(mascot && pl && pr){
     pr.setAttribute('cx', 195+dx); pr.setAttribute('cy', 140+dy);
   }, {passive:true});
 
-  const lines = ['Hi! Click me 💜','Design + Code ✨','Hire Sparsh? 👀','Building products 🎈','Glad you are here! 🌈'];
+  const lines = ['Design + Engineering','Human-centered thinking','Let''s build something great','Thanks for visiting','sparsh.design'];
   let li = 0;
   setTimeout(() => bubble && bubble.classList.add('show'), 1200);
 
@@ -1014,13 +1096,7 @@ function confetti(x, y){
   }
 }
 
-/* ---------- placeholder links nudge ---------- */
-$$('[data-todo]').forEach(a => a.addEventListener('click', e => {
-  if(a.getAttribute('href') === '#'){
-    e.preventDefault();
-    alert('Add your real ' + a.dataset.todo + ' link in index.html');
-  }
-}));
+
 
 /* small celebration when reaching contact */
 const contactMail = $('#contact .mail');
